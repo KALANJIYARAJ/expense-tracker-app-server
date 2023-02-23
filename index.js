@@ -9,7 +9,7 @@ require("dotenv").config();
 
 app.use(
   cors({
-    orgin: "http://localhost:3000",
+    orgin: "https://lively-tarsier-82ff10.netlify.app",
   })
 );
 app.use(express.json());
