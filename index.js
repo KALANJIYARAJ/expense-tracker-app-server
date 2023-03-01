@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
-const messageRoutes = require("./routes/messages");
+const transactionRoutes = require("./routes/transaction");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
@@ -27,7 +27,7 @@ mongoose
   });
 
 app.use("/api/auth", authRoutes);
-app.use("/api/messages", messageRoutes);
+app.use("/api/transaction", transactionRoutes);
 
 const server = app.listen(process.env.PORT || 5000, () =>
   console.log(`Server started on 5000`)
