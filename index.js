@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const transactionRoutes = require("./routes/transaction");
 const app = express();
-const socket = require("socket.io");
 require("dotenv").config();
 
 app.use(
@@ -29,6 +28,6 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api/transaction", transactionRoutes);
 
-const server = app.listen(process.env.PORT || 5000, () =>
+app.listen(process.env.PORT || 5000, () =>
   console.log(`Server started on 5000`)
 );
