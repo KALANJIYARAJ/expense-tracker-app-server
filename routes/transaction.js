@@ -7,7 +7,7 @@ const {
 const router = require("express").Router();
 
 router.post("/create/", createTransaction);
-router.get("/get/", getTransaction);
+router.get("/get/:id", getTransaction);
 router.put("/edit/:id", editTransaction);
 router.delete("/delete/:id", deleteTransaction);
 

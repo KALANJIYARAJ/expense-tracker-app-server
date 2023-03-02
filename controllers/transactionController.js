@@ -24,8 +24,9 @@ module.exports.createTransaction = async (req, res, next) => {
 //getTransaction
 module.exports.getTransaction = async (req, res, next) => {
   try {
-    const { userId } = req.body;
-    const transactions = await Transactions.find({ userId }).sort({
+    const transactions = await Transactions.find({
+      userId: req.params.id,
+    }).sort({
       updatedAt: 1,
     });
     res.json(transactions);
